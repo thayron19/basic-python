@@ -1,0 +1,355 @@
+== tratando strings
+
+frase = 'abcdef ghijklmnopqr stuvwxyz'
+print('posição fixa                               ',frase[0])
+print('Uma parte                                  ',frase[0:10])
+print('de início até                              ',frase[:3])
+print('inicio e fim fixa                          ',frase[5:10])
+print('inicio e fim fixa pulando 2                ',frase[5:10:2])
+print('posição fixa inicial + resto               ',frase[5:])
+print('posição fixa inicial + resto + pulando de 3',frase[5::3])
+print('-'*70)
+print(len(frase))
+print(frase.count('o'))
+print(frase.count('a',0,10))
+print(frase.find('yz'))
+print(frase.find('dw'))
+print('abc' in frase)
+print('-'*70)
+print(frase.replace('abc','1-'))
+print(frase.upper())
+print(frase.lower())
+print(frase.capitalize())
+print(frase.title())
+print(frase.strip())
+print(frase.rstrip())
+print(frase.lstrip())
+print(frase.split())
+print('-'.join(frase))
+
+--------------------------------
+
+== cores
+
+print('\033[31m'+'vermelho'+'\033[32m'+' verde'+'\033[34m'+' azul\033[m')
+
+033[m -> limpar
+
+--------------------------------------------------------------------------------------
+
+== for
+
+for n in range(0,10,1):
+    if (n+1) % 2 == 0:
+        print('{} é par'.format(n+1))
+    else:
+        print('{} é impar'.format(n+1))
+
+== acumuladores
+
+s=0
+m=1
+
+for n in range(0,3,1):
+    num = int(input('num: '))
+    s += num
+    m *= num
+print('A soma de todos é: {}'.format(s))
+print('A multiplicação de todos é: {}'.format(m))
+
+--------------------------------------------------------------------------------------
+
+== while
+
+while True:
+    x = input('Num: ')
+    if x == 'sair':
+        break
+
+--------------------------------------------------------------------------------------
+
+==tuplas são imutaveis
+
+tupla = ('a','b','c','a')
+lista = [1,2,3]
+dicionário = {'1a','2b','3c'}
+linha = '-'*50
+
+print(linha)
+
+print('TUPLA')
+print('toda ',tupla)
+print('uma parte ',tupla[0:2])
+print('Tamanho ',len(tupla))
+print(sorted(tupla))
+
+print(tupla.count('a'))
+print(tupla.index('a',1))
+print(f'O segundo A está na {tupla.index("a",1)}')
+
+for c in tupla:
+    print(c)
+
+print(linha)
+
+print('LISTA')
+print('toda ',lista)
+print('uma parte ',lista[0:2])
+print('Tamanho ',len(lista))
+
+print(linha)
+
+print('DICIONARIO')
+print('toda ',dicionário)
+print('uma parte ',dicionário)
+print('Tamanho ',len(dicionário))
+
+print(linha)
+
+for n in 'num':
+    print(n)
+
+--------------------------------------------------------------------------------------
+
+
+== listas
+
+lista = ['1', '2', '3', '4', '5']
+
+print(f'toda lista {lista}')
+
+lista.append(6)
+
+print(f'adicionando 6 no final {lista}')
+
+lista.insert(0,0)
+
+print(f'adicionando 0 no início {lista}')
+
+lista.pop()
+
+print(f'apagando último {lista}')
+
+del lista[0]
+
+print(f'apagando uma posição {lista}')
+
+if '1' in lista:
+    lista.remove('1')
+    print(f'apagando um item {lista}')
+
+print('-'*20)
+
+lista2 = list(range(1,11,2))
+
+print(lista2)
+
+print(f'quantidade {len(lista2)}')
+
+lista2.sort(reverse=True)
+
+print(lista2)
+
+1.0
+
+lista = []
+mult = 1
+som = 0
+
+while True:
+
+    x = int(input('Num: '))
+
+    if x == 0:
+        break
+    else:
+        lista.append(x)
+
+for n in lista:
+    mult *= n
+    som += n
+
+print(f'Multiplicando lista ={mult}')
+print(f'Somando lista ={som}')
+
+print(f'Toda a lista {lista}')
+ 
+--------------------------------------------------------------------------------------
+
+== listas dentro de listas
+
+lista = []
+lista2 = []
+linha = '-'*40
+
+while True:
+
+    nome = input('Nome: ')
+
+    if nome[0] in 'Ss':
+        break
+    else:
+        idade = int(input('Idade: '))
+
+    lista.append(nome)
+    lista.append(idade)
+
+    lista2.append(lista[-2:])
+
+print(linha)
+
+print(f'lista completa {lista}')
+print(f'lista2 completa {lista2}')
+
+print(linha)
+
+for i, n in enumerate(lista2):
+    print(f'parte {i} da lista1 {n[0]}')
+    print(linha)
+
+for i, n in enumerate(lista2):
+    print(f'parte da parte {i} da lista1 {n[0]}')
+    print(linha)
+
+----
+
+lista = [1,1,1,1,1,1,1,1]
+
+print(sum(lista))
+
+--------------------------------------------------------------------------------------
+
+==dicionario
+
+dicionario = {}
+
+dicionario['nome'] = 'pedro'
+dicionario['idade'] = '1'
+dicionario['Peso'] = '10'
+
+print(dicionario,'\n')
+print(dicionario.values(),'\n')
+print(dicionario.keys(),'\n')
+print(dicionario.items(),'\n')
+
+for k, v in dicionario.items():
+    print(f'O {k} é {v}')
+
+2.0
+
+dicionario = {}
+lista = []
+
+for n in range(0,2):
+    dicionario['nome']=str(input('Nome: '))
+    dicionario['idade'] = int(input('Idade: '))
+    lista.append(dicionario.copy())
+
+print()
+
+print(dicionario)
+print(lista)
+
+print()
+
+for n in lista:
+    for v in n.values():
+        print(v, end=' ')
+
+print()
+
+for k, v in enumerate(lista):
+    print(f'\nO nome é {lista[k]["nome"]} e a idade é {lista[k]["idade"]}')
+
+
+--------------------------------------------------------------------------------------
+
+
+from operator import itemgetter
+
+dicionario = {1:5,2:4,3:3,4:2,5:1}
+ranking = dict()
+
+print()
+
+print(dicionario)
+
+print()
+
+ranking = sorted(dicionario.items(), key=itemgetter(1), reverse=True)
+
+print(ranking)
+
+ranking = sorted(dicionario.items(), key=itemgetter(0), reverse=True)
+
+print(ranking)
+
+--------------------------------------------------------------------------------------
+
+def teste(lst):
+    lst[1:1] = [10]
+
+lista = [1,2,3,4,5]
+print(lista)
+
+teste(lista)
+print(lista)
+
+def outro(num):
+    print('teste',num1,num)
+
+num1 = 11
+print(num1)
+
+outro(num1)
+print(num1)
+
+---
+
+def somar(a):
+    global num1
+    num1 = sum(num1)
+
+num1 = [1,2]
+
+somar(num1)
+
+print(num1)
+
+--
+
+def somar(a):
+    a = sum(a)
+    return a
+
+num1 = [1,2]
+
+num1 = somar(num1)
+
+print(num1)
+
+--
+
+def somar(a):
+    a = sum(a)
+    return a
+
+num1 = [1,2]
+
+print(somar(num1))
+
+--------------------------------------------------------------------------------------
+
+== validando int
+
+def ifint(num):
+    num = str(num)
+    while True:
+        if num.isnumeric():
+            return int(num)
+            break
+        else:
+            num=input(f'\033[31m[{num}] não é um número inteiro, tente novamente: \033[m')
+
+n = ifint(input('Num: '))
+print(f'Você digitou {n}')
